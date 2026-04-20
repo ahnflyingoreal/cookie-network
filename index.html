@@ -256,12 +256,14 @@ const displayNames = {'행정실장':'실장'};
 
 let connections = new Set();
 let selected = null;
-let sheetUrl = localStorage.getItem('cookie_sheet_url') || '';
+let sheetUrl = localStorage.getItem('cookie_sheet_url') || 'https://script.google.com/macros/s/AKfycbwSu8m4xQghydXKy8NWzONjZbUT1ydu_kQ0EjeclW4XHPYOu5FFrIo8HGOjgQoraa0/exec';
 let autoRefreshTimer = null;
 
 // 저장된 URL 표시
 if (sheetUrl) {
   document.getElementById('sheet-url').value = sheetUrl;
+  document.getElementById('setup-banner').style.display = 'none';
+} else {
   document.getElementById('setup-banner').style.display = 'none';
 }
 
